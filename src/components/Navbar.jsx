@@ -15,9 +15,6 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
     const [navbar, setNavbar] = useState(false)
 
-    
-
-    useEffect(() => {
       const changeBackground = () => {
         if (window.scrollY >= 80) {
             setNavbar(true)
@@ -27,9 +24,6 @@ const Navbar = () => {
       }
 
       window.addEventListener('scroll', changeBackground)
-
-     return () => window.removeEventListener('scroll', changeBackground)
-    },[])
 
     
 
