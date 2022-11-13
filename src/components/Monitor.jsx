@@ -9,7 +9,7 @@ const Monitor = () => {
     }
 
   return (
-    <div className='w-full h-screen md:h-1/2  flex flex-col justify-center items-center text-white'>
+    <div className='w-full h-screen sm:h-[30rem] flex flex-col justify-center items-center text-white'>
         <div className='max-w-[44.25rem] px-4 sm:px-10'>
             <h1 className='font-medium text-center md:text-left font-[Manrope] text-[2.813rem] tracking-[-0.01em] leading-[3.688rem]'>
              Monitor your activity as a Merchant & Make decision 

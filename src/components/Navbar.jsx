@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
 import { FiMenu } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
@@ -13,11 +13,34 @@ const Links = [
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
+    const [navbar, setNavbar] = useState(false)
+
+    
+
+    useEffect(() => {
+      const changeBackground = () => {
+        if (window.scrollY >= 80) {
+            setNavbar(true)
+        } else{
+          setNavbar(false)
+        }
+      }
+
+      window.addEventListener('scroll', changeBackground)
+
+     return () => window.removeEventListener('scroll', changeBackground)
+    },[])
+
+    
+
+    const normalStyle = 'w-full fixed top-0 left-0'
+
+    const bckStyle = 'w-full fixed top-0 left-0 transition-all duration-500 ease-in bg-[#110e2f] '
 
   return (
-    <div className='w-full fixed top-0 left-0'>
+    <div className={navbar ? bckStyle : normalStyle}>
       <div className='md:flex md:mx-auto md:justify-around justify-between text-white item-center py-4 md:pt-10 px-7 md:px-8'>
-        <div className='flex items-center font-bold text-2xl cursor-pointer font-[Poppins]' onClick={()=> setOpen(!open)}>
+        <div className='flex font-[Roboto-Slab] items-center font-bold text-2xl cursor-pointer' onClick={()=> setOpen(!open)}>
             <Link to='/' className='text-[2.151rem]'>Cyberpay</Link>
         </div>
         <div className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden' onClick={()=> setOpen(!open)}>
@@ -28,7 +51,7 @@ const Navbar = () => {
         >
             {Links.map((link, index) => (
                 <li key={index} className='md:py-2 md:ml-8 md:my-0 my-7' onClick={()=> setOpen(!open)}>
-                    <Link to={link.link} className={`hover:text-sky-600 duration-500 text-base ${link.font}`}>{link.name}</Link>
+                    <Link to={link.link} className={`hover:opacity-[50%] duration-500 text-base ${link.font}`}>{link.name}</Link>
                 </li>
             )  
             )}

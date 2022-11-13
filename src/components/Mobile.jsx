@@ -11,7 +11,7 @@ const Mobile = () => {
 
 
   return (
-    <section className='w-full lg:h-screen min-h-screen flex flex-col justify-center items-center'>
+    <section className='w-full lg:h-screen h-[60rem] flex flex-col justify-center items-center'>
 
                             {/* MObile TABLET VIEW */}
         <div className='max-w-[80%] px-8 h-[20rem] lg:hidden flex flex-col items-center justify-center bg-white rounded-lg'>
@@ -28,8 +28,8 @@ const Mobile = () => {
          </div>
         </div>
 
-        <div className='h-1/2 mt-8 lg:hidden' style={phoneStyle}>
-        <img src={Phone} alt="" />
+        <div className='w-[30vh] h-[30vh] mt-8 lg:hidden' style={phoneStyle}>
+        <img src={Phone} alt="" className=''/>
         </div>
                 
                 {/* Desktop  */}
