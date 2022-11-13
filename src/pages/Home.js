@@ -4,7 +4,6 @@ import MakePay from '../components/MakePay'
 import Monitor from '../components/Monitor'
 import Dashboard from '../components/Dashboard'
 import Mobile from '../components/Mobile'
-import Ellipses from '../components/Ellipses'
 
 const Home = () => {
   const homeBg = {
@@ -14,7 +13,6 @@ const Home = () => {
   return (
     <main style={homeBg}>
         <MakePay />
-        {/* <Ellipses /> */}
         <Cable />
         <Monitor />
         <Dashboard />
