@@ -15,15 +15,22 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
     const [navbar, setNavbar] = useState(false)
 
+    
+
+    useEffect(() => {
       const changeBackground = () => {
         if (window.scrollY >= 80) {
             setNavbar(true)
         } else{
           setNavbar(false)
         }
+        console.log(Window.scrollY)
       }
 
       window.addEventListener('scroll', changeBackground)
+
+     return () => window.removeEventListener('scroll', changeBackground)
+    },[])
 
     
 
@@ -32,7 +39,7 @@ const Navbar = () => {
     const bckStyle = 'w-full fixed top-0 left-0 transition-all duration-500 ease-in bg-[#110e2f] '
 
   return (
-    <div className='w-full fixed top-0 left-0'>
+    <div className={navbar ? bckStyle : normalStyle}>
       <div className='md:flex md:mx-auto md:justify-around justify-between text-white item-center py-4 md:pt-10 px-7 md:px-8'>
         <div className='flex font-[Roboto-Slab] items-center font-bold text-2xl cursor-pointer' onClick={()=> setOpen(!open)}>
             <Link to='/' className='text-[2.151rem]'>Cyberpay</Link>
