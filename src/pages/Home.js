@@ -11,7 +11,7 @@ const Home = () => {
   }
 
   return (
-    <main style={homeBg}>
+    <main style={homeBg} className=''>
         <MakePay />
         <Cable />
         <Monitor />

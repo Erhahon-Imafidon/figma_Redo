@@ -37,7 +37,7 @@ const Cable = () => {
     ]
 
   return (
-    <section className='w-full h-[60rem] sm:h-[30rem] md:mt-[-5rem] place-content-center place-items-center grid gap-y-4 gap-x-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:px-6'>
+    <section className='w-full min-h-screen mt-4 sm:h-[50rem] md:mt-[-2rem] place-content-center place-items-center grid gap-y-4 gap-x-2 xl:px-16 2xl:px-60 md:px-38 lg:px-0 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6'>
         {
             cable.map((item, index) => {
                 const { icon, background, name} = item

@@ -32,22 +32,22 @@ const Navbar = () => {
      return () => window.removeEventListener('scroll', changeBackground)
     },[])
 
-    
+    // {navbar ? bckStyle : normalStyle}
 
-    const normalStyle = 'w-full fixed top-0 left-0'
+    const normalStyle = 'w-full fixed z-[9000px] top-0 left-0'
 
-    const bckStyle = 'w-full fixed top-0 left-0 transition-all duration-500 ease-in bg-[#110e2f] '
+    const bckStyle = 'w-full fixed z-[9000px] top-0 left-0 transition-all duration-500 ease-in bg-[#110e2f] '
 
   return (
     <div className={navbar ? bckStyle : normalStyle}>
-      <div className='md:flex md:mx-auto md:justify-around justify-between text-white item-center py-4 md:pt-10 px-7 md:px-8'>
+      <div className='md:flex md:mx-auto md:justify-around justify-between text-white z-[9000px] item-center py-4 md:pt-10 px-7 md:px-8'>
         <div className='flex font-[Roboto-Slab] items-center font-bold text-2xl cursor-pointer' onClick={()=> setOpen(!open)}>
             <Link to='/' className='text-[2.151rem]'>Cyberpay</Link>
         </div>
         <div className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden' onClick={()=> setOpen(!open)}>
           {open ? <IoIosCloseCircleOutline /> : <FiMenu />}
         </div>
-        <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto
+        <ul className={`md:flex md:items-center max-[767px]:bg-hero-pattern md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto
          md:pl-0 pl-9 transition-all duration-500 ease-in justify-center ${open ? 'top-[60px]' : 'top-[-400px]'}`}
         >
             {Links.map((link, index) => (

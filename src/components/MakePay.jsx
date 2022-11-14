@@ -1,5 +1,7 @@
 import React from 'react'
 import Arrow from '../assets/Vector.png'
+import Ellipse from '../assets/Ellipse1.png'
+
 
 const MakePay = () => {
   const bgImg = {
@@ -8,8 +10,15 @@ const MakePay = () => {
     borderRadius: '2px',
 }
 
+  const secImg = {
+    backgroundImage: `url(${Ellipse})`,
+    backgroundPosition: 'center',
+    // transform: 'rotate(10deg)'
+  }
+
+
   return (
-        <section className='flex flex-col justify-center items-center text-center text-white w-full h-screen'>
+        <section className='flex flex-col justify-center items-center text-center text-white w-full h-screen bg-no-repeat' style={secImg}>
           <div className='max-w-[41.063rem] mt-20'>
             <h1 className='text-[2.5rem] px-5 md:p-0 md:text-[3.125rem] '>Make payment - Whenever, wherever, with Cyberpay</h1>
           </div>
